@@ -61,6 +61,7 @@ This data pipeline is for development and presentation only and is not yet produ
 - The Metadata catalog can be further enhanced to accomodate both incremental and full refresh loads
 - A data cleardown and archiving pipeline can be added to reduce and maintain the data volumne from overgrowing and impacting performance in the long run
 - More comprehensive error handling and pipeline monitoring could be added for maintainance purposes
+- The local warehouse and metastore databases needs to be configured to a shared folder 
 - Deploy and test on a distrubuted cluster environment such as Spark or Databricks
 
 
