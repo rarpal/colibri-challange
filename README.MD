@@ -1,12 +1,12 @@
 # Introduction
 
-This project builds a data pipeline to extract and ingest raw data from a set of wind turbines that generate power based on wind speed and direction, and their power output is measured in megawatts.
+This project builds a data pipeline to extract and ingest raw data from a set of wind turbines that generate power based on wind speed and direction with their power outputs measured in megawatts.
 
 The pipeline does the following:
 - Validates and cleans the data based on some predetermined dataset parameters
 - Calculates summary statistics for each turbine based on the period covered by the provided data
 - Identifies power output anomalies for each turbine over the covered period using their mean and standard deviation
-- Stored the validated and cleansed data along with the analysis produced in a database which can be used for further analysis
+- Stores the validated and cleansed data along with the analysis produced in a database which can be used for further analysis
 
 # Tooling
 
@@ -31,29 +31,29 @@ Note:- This Pipeline has been tested on a local development environment based on
 
 # Running the Pipeline
 
-The main driver pipeline is located in the /pipelines folder named wtpipelinemain.py. Once the installation and environment configuration is in place, the pipeline can be executed locally by simply opening a terminal and issuing the following commands:
+The main driver pipeline is located in the /pipelines folder and named wtpipelinemain.py. Once the installation and environment configuration is in place, the pipeline can be executed locally by simply opening a terminal and issuing the following commands:
 
     cd /pipelines
     python wtpipelinemain
 
 The pipeline will use the dataset located in the /data/landed folder.
 
-This pipeline could also be run on a cluster environment like Databricks by creating a package and uploading to a cluster and then either setting up a workflow job or issuing the spark-submit command. However note that this has not been tested on such as environment as of yet.
+This pipeline could also be run on a cluster environment like Databricks by creating a package and uploading to a cluster and then either setting up a workflow job or issuing the spark-submit command. However this has not been tested on such an environment so far.
 
 # Assumptions
 
 Since the requirements for this project was gathered from a limited breif, some assumptions have been made based on profiling the provided dataset:
-- For data validation and cleansing purposes, the range of wind speeds, wind directions and power outputs have been pre-determined based on the provided dataset
+- For data validation and cleansing purposes, A valid range of wind speeds, wind directions and power outputs have been pre-determined from the provided dataset
 - For the days where data is missing in the ingested data files, the pipeline would fill those based on previous days data
-- The summary statistics and anomaly analysis are based on the period available in the provied dataset
+- The summary statistics and anomaly analysis are based on the full period available in the provied dataset
 - The pipeline would extract and load incomming data on an incremental basis
 
 # Limitations
 
-This Data Pipeline project is for development and presentation only and is not production ready. However it contains the structure and framework to to scale and extend further into a full production ready version based on a more refined set of requirements and time allocation. The following are some of the current limitations:
+This data pipeline is for development and presentation only and is not yet production ready. However it contains the structure and framework to be able to scale and extend further into a full production ready version given a more refined set of requirements and sufficient time. The following are some of the current limitations:
 - Limited set of test cases used to demonstrate the capabilities of the testing framework
-- Not optimaised for performance due to the limited compute and other infrastructure resources
-- No provisions for any CI/CD have been considered
+- Not optimaised for performance on larger datasets and higher ingestion volumes
+- No provisions made for CI/CD
 
 # Further work
 
