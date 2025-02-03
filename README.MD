@@ -19,6 +19,22 @@ The following main tools and resources have been used for the developent of this
 - All package dependancies have been exported to environment.yml
 - Hosted on Windows 11 Pro for Workstations
 
+# Installing the Pipeline
+
+- Clone the Github Repo at https://github.com/rarpal/colibri-challange.git
+- Create a python environment with Conda using the provided environment.yml
+    - or use alternative Environment and Package Manager using the same dependancies
+- Install the dependancy packages (Conda also does this as part of environment creation from the .yml file)
+- Setup Spark and Hadoop environment variables id not already done
+
+Note:- This Pipeline has been tested on a local development environment based on the tooling and resources mentioned above. Other environments may require some minor configuration changes to work correctly. 
+
+# Running the Pipeline
+
+The main driver pipeline is located in the /pipelines folder named wtpipelinemain.py. Once the installation and environment configuration is in place, the pipeline can be executed locally by simply running python wtpipelinemain in a terminal under the /pipelines folder. The pipeline will use the dataset located in the /data/landed folder.
+
+This pipeline could also be run on a cluster environment like Databricks by creating a package and uploading to a cluster and then either setting up a workflow job or issuing the spark-submit command. However note that this has not been tested on such as environment as of yet.
+
 # Assumptions
 
 Since the requirements for this project was gathered from a limited breif, some assumptions have been made based on profiling the provided dataset:
@@ -40,6 +56,8 @@ This Data Pipeline project is for development and presentation only and is not p
 - The Metadata catalog can be further enhanced to accomodate both incremental and full refresh loads
 - A data cleardown and archiving pipeline can be added to reduce and maintain the data volumne from overgrowing and impacting performance in the long run
 - More comprehensive error handling and pipeline monitoring could be added for maintainance purposes
+- Deploy and test on a distrubuted cluster environment such as Spark or Databricks
+
 
 # Results and Outputs
 
