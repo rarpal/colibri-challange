@@ -45,8 +45,8 @@ This Data Pipeline project is for development and presentation only and is not p
 
 ### Wind Turbine Power Output anomalies for the whole period can be analyised by querying the following table produced by the pipeline
 
+![ANOMALIES_WT_POWER table](/images/anomalies_wt_power.png)
 SELECT * FROM ANOMALIES_WT_POWER
-
 +----------+------------------+------------------+-------------------+----------------+------------------+----------+
 |TURBINE_ID|TURBINE_MEAN      |ALL_MEAN          |ALL_STDDEV         |ALL_STDDEV_H2   |ALL_STDDEV_L2     |IS_ANOMALY|
 +----------+------------------+------------------+-------------------+----------------+------------------+----------+
@@ -111,21 +111,6 @@ DESCRIBE TABLE WTDATA
 |WIND_DIRECTION_CLEANED|int      |NULL   |
 |POWER_OUTPUT_CLEANED  |double   |NULL   |
 +----------------------+---------+-------+
-
-> +----------------------+---------+-------+
-> |col_name              |data_type|comment|
-> +----------------------+---------+-------+
-> |TIMESTAMP             |timestamp|NULL   |
-> |TURBINE_ID            |int      |NULL   |
-> |WIND_SPEED            |double   |NULL   |
-> |WIND_DIRECTION        |int      |NULL   |
-> |POWER_OUTPUT          |double   |NULL   |
-> |OUTPUTDATE            |date     |NULL   |
-> |IS_MISSING            |boolean  |NULL   |
-> |WIND_SPEED_CLEANED    |double   |NULL   |
-> |WIND_DIRECTION_CLEANED|int      |NULL   |
-> |POWER_OUTPUT_CLEANED  |double   |NULL   |
-> +----------------------+---------+-------+
 
 
 ### Results of the limited set of Units Tests performed is shows below
