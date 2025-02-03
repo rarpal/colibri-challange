@@ -112,6 +112,21 @@ DESCRIBE TABLE WTDATA
 |POWER_OUTPUT_CLEANED  |double   |NULL   |
 +----------------------+---------+-------+
 
+> +----------------------+---------+-------+
+> |col_name              |data_type|comment|
+> +----------------------+---------+-------+
+> |TIMESTAMP             |timestamp|NULL   |
+> |TURBINE_ID            |int      |NULL   |
+> |WIND_SPEED            |double   |NULL   |
+> |WIND_DIRECTION        |int      |NULL   |
+> |POWER_OUTPUT          |double   |NULL   |
+> |OUTPUTDATE            |date     |NULL   |
+> |IS_MISSING            |boolean  |NULL   |
+> |WIND_SPEED_CLEANED    |double   |NULL   |
+> |WIND_DIRECTION_CLEANED|int      |NULL   |
+> |POWER_OUTPUT_CLEANED  |double   |NULL   |
+> +----------------------+---------+-------+
+
 
 ### Results of the limited set of Units Tests performed is shows below
 
