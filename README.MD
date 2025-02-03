@@ -33,8 +33,8 @@ Note:- This Pipeline has been tested on a local development environment based on
 
 The main driver pipeline is located in the /pipelines folder named wtpipelinemain.py. Once the installation and environment configuration is in place, the pipeline can be executed locally by simply opening a terminal and issuing the following commands:
 
-cd /pipelines
-python wtpipelinemain
+    cd /pipelines
+    python wtpipelinemain
 
 The pipeline will use the dataset located in the /data/landed folder.
 
