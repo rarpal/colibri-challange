@@ -41,11 +41,12 @@ This Data Pipeline project is for development and presentation only and is not p
 - A data cleardown and archiving pipeline can be added to reduce and maintain the data volumne from overgrowing and impacting performance in the long run
 - More comprehensive error handling and pipeline monitoring could be added for maintainance purposes
 
-# Results Outputs
+# Results and Outputs
 
 ### Wind Turbine Power Output anomalies for the whole period can be analyised by querying the following table produced by the pipeline
 
 SELECT * FROM ANOMALIES_WT_POWER
+
 +----------+------------------+------------------+-------------------+----------------+------------------+----------+
 |TURBINE_ID|TURBINE_MEAN      |ALL_MEAN          |ALL_STDDEV         |ALL_STDDEV_H2   |ALL_STDDEV_L2     |IS_ANOMALY|
 +----------+------------------+------------------+-------------------+----------------+------------------+----------+
@@ -70,6 +71,7 @@ SELECT * FROM ANOMALIES_WT_POWER
 ### Wind Turbine Summary Statistics for the whole period can be analyised by querying the following table produced by the pipeline
 
 SELECT * FROM STATS_WT_POWER
+
 +----------+---------+---------+------------------+
 |TURBINE_ID|MIN_POWER|MAX_POWER|AVG_POWER         |
 +----------+---------+---------+------------------+
@@ -94,6 +96,7 @@ SELECT * FROM STATS_WT_POWER
 ### Additional analysis can be conducted by querying the following Wind Turbine Data table loaded by the pipeline
 
 DESCRIBE TABLE WTDATA
+
 +----------------------+---------+-------+
 |col_name              |data_type|comment|
 +----------------------+---------+-------+
