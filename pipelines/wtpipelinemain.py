@@ -16,12 +16,12 @@ from pipelines.transformation import analyse_anomalies_wt_power,analyse_stats_wt
 
 sps, logger, conf = start_spark(app_name='wtdata_pipeline')
 
-extract_wtdata(sps)
+extract_wtdata.extract_wtdata(sps)
 
-validate_wtdata(sps)
+validate_wtdata.validate_wtdata(sps)
 
-analyse_anomalies_wt_power(sps)
+analyse_anomalies_wt_power.analyse_anomalies_wt_power(sps)
 
-analyse_stats_wt_power(sps)
+analyse_stats_wt_power.analyse_stats_wt_power(sps)
 
 sps.stop()
