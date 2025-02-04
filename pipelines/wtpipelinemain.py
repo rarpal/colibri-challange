@@ -4,8 +4,9 @@
 1. Start Spark
 2. Call extraction for typed wt data :- store typed extract partitioned by date and turbine id
 3. Call validattion for wt data :- store typed extract with validation tags
-4. Call transformations :- store as delta lake tables
-5. Stop Spark
+4. Call loading to load wt data to the database :- store as delta lake tables
+5. Call transformations :- store as delta lake tables
+6. Stop Spark
 
 """
 
