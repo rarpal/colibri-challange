@@ -12,6 +12,7 @@
 from pipelines.util.platform import start_spark
 from pipelines.extraction import extract_wtdata
 from pipelines.validation import validate_wtdata
+from pipelines.loading import load_wtdata
 from pipelines.transformation import analyse_anomalies_wt_power,analyse_stats_wt_power
 
 sps, logger, conf = start_spark(app_name='wtdata_pipeline')
@@ -19,6 +20,8 @@ sps, logger, conf = start_spark(app_name='wtdata_pipeline')
 extract_wtdata.extract_wtdata(sps)
 
 validate_wtdata.validate_wtdata(sps)
+
+load_wtdata.load_wtdata(sps)
 
 analyse_anomalies_wt_power.analyse_anomalies_wt_power(sps)
 
