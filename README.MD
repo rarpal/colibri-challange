@@ -63,6 +63,7 @@ This data pipeline is for development and presentation only and is not yet produ
 - Additional error handling and pipeline logging to be added for maintainance purposes
 - The local warehouse and metastore databases needs to be configured to a shared folder 
 - Deploy and test on a distrubuted cluster environment such as Spark or Databricks
+- Build a Docker image for isolation and portability
 
 
 # Results and Outputs
