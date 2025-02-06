@@ -51,6 +51,7 @@ def start_spark(app_name='my_spark_app', master='local[*]', jar_packages=[],
             .master(master)
             .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
             .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
+            .config("spark.sql.warehouse.dir",r"C:/PalProjects/colibri-challange/code/data/datamart/warehouse")
             .config('storage.landed',r'C:/PalProjects/colibri-challange/code/data/landed')
             .config('storage.extracted',r'C:/PalProjects/colibri-challange/code/data/extracted')
             .config('storage.validated',r'C:/PalProjects/colibri-challange/code/data/validated')
@@ -58,6 +59,14 @@ def start_spark(app_name='my_spark_app', master='local[*]', jar_packages=[],
             .config('storage.metadata',r'C:/PalProjects/colibri-challange/code/data/metadata')
             .config('storage.testdata',r'C:/PalProjects/colibri-challange/code/tests/fixtures')
             .appName(app_name + '_local'))
+        
+        # Remember to create the $SPARK_HOME/conf/hive-site.xml to configure the location of the metastore_db folder as follows
+        """
+        <property>
+            <name>javax.jdo.option.ConnectionURL</name>
+            <value>jdbc:derby:;databaseName=C:/PalProjects/colibri-challange/code/data/datamart/metastore_db;create=true</value>
+        </property>
+        """
 
         # create Spark JAR packages string
         spark_jars_packages = ','.join(list(jar_packages))

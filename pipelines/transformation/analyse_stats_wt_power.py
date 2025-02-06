@@ -10,7 +10,6 @@ def analyse_stats_wt_power(sps: SparkSession):
 
     sps.sql(f"CREATE OR REPLACE TABLE STATS_WT_POWER \
             USING DELTA \
-            LOCATION {location} \
             SELECT \
                 TURBINE_ID, \
                 MIN(POWER_OUTPUT_CLEANED) AS MIN_POWER, \

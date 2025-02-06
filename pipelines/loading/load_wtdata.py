@@ -27,7 +27,7 @@ def load_wtdata(sps: SparkSession):
 
     wtdata_validated.createOrReplaceTempView("wtdata_validated")
 
-    location = "'{storage_path}'".format(storage_path = sps.conf.get('storage.datamart'))
+    location = "'{storage_path}/WTDATA'".format(storage_path = sps.conf.get('storage.datamart'))
 
     sps.sql(f"CREATE TABLE IF NOT EXISTS WTDATA ( \
                     TIMESTAMP TIMESTAMP, \

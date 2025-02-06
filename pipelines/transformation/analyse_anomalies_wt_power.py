@@ -10,7 +10,6 @@ def analyse_anomalies_wt_power(sps: SparkSession):
 
     sps.sql(f"CREATE OR REPLACE TABLE ANOMALIES_WT_POWER \
             USING DELTA \
-            LOCATION {location} \
             WITH CTE1 AS ( \
                 SELECT \
                     TURBINE_ID, \
